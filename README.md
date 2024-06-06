@@ -1,4 +1,4 @@
-![](assets/League%20Tracker.png)
+![](assets/Readme%20page.png)
 
 # Installation
 > Note

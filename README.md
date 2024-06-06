@@ -3,7 +3,7 @@
 # Installation
 > Note
 >
-> > [A live deployment of Champion Tracker is available on GitHub pages](https://jaime-sanz.github.io/Homepage/)
+> > [A live deployment of my portfolio is available on GitHub pages](https://jaime-sanz.github.io/Homepage/)
 
 For those who would like to run the application and/or edit its source code on their local computer, follow the steps below:
 

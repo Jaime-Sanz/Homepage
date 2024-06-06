@@ -1,26 +1,105 @@
+:root {
+    --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --main-footer-color: #474B4f;
+    --main-text-color: #ffffff;
+    --main-header-color: #86C232;
+    --main-bg-color: white;
+    --main-project-color: #222629;
+}
+
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.headers {
+    color: var(--main-header-color);
+    font-size: 1.5em;
+}   
 
 #container {
     display: flex;
-    width: 100%;
     justify-content: center;
     flex-direction: column;
+    background-image: linear-gradient(153.43deg, #474B4f 50%, #222629 50%);
+    background-size: 200% 100%;
+    background-position: right top;
 }
 
-#section-1 {
+#container, header, main, #footer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#about-container, .project {
+    background-color: var(--main-bg-color);
+}
+
+header {
     display: flex;
     width: 100%;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#about-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+#about-image-container h1 {
+    color: var(--main-text-color);
+    position: absolute;
+    align-self: flex-end;
+    text-align: center;
+}
+
+#about-image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+
+.project-headers {
+    align-self: center;
+}
+
+.github-project-icon {
+    align-self: center;
+}
+
+.project-icon-container a{
+    text-decoration: none;
+}
+
+#about-image-container, #about-container, #footer-picture {
+    border: 1px solid black;
 }
 
 #about-container {
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    align-self: center;
+    box-shadow: var(--box-shadow);
+    background-color: var(--main-project-color);
+    color: var(--main-text-color);
 }
 
 #about-links {
@@ -28,7 +107,7 @@
     align-self: flex-end;
 }
 
-#section-2 {
+main {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -42,7 +121,7 @@
     width: 80%;
 }
 
-#box-container {
+#main-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -50,30 +129,37 @@
     width: 90%;
 }
 
-.boxes {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.project {
+    box-shadow: var(--box-shadow);
+    background-color: var(--main-project-color);
+    border: 1px solid black;
+    color: var(--main-text-color);
 }
 
-.box-pictures {
+.project-picture {
     width: 100%;
     height: 55%;
 }
 
-#section-3 {
+footer {
     display: flex;
     width: 100%;
     justify-content: center;
-    border-top: 2px solid black;
-    background-color: #2F3C7E;
+    background-color: var(--main-footer-color);
+    color: var(--main-text-color);
+    flex-wrap: wrap;
 }
 
-#text-container-3 {
+#footer-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
 }
 
-#text-container-3 h2 {
+#footer-icon-container {
+    display: flex;
+}
+
+#footer-container h2 {
     margin-top: 25px;
 }
 
@@ -82,40 +168,102 @@
     align-self: flex-start;
 }
 
+.footer-icons img {
+    box-shadow: var(--box-shadow);
+    border-radius: 30%;
+}
+
 .material-symbols-outlined {
     vertical-align: middle;
 }
 
-.section-3-icons img {
-    border: 2px solid black;
-    border-radius: 30%;
-}
-
-@media screen and (max-width: 767px) {
-  }
-  
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-
-    #text-container {
+/*PHONE SMALL*/
+@media screen and (max-width: 480px) {
+    header {
+        margin-bottom: 50px;
         margin-top: 20px;
-        margin-bottom: 5px;
     }
-    
-    .boxes {
-        margin-bottom: 35px;
-        margin-left: 45px;
-        margin-right: 45px;
+
+    #about-image-container {
         width: 250px;
-        height: 300px;
+    }
+
+    #about-container {
+        width: 300px;
+        height: 280px;
+    }
+
+    .project-icon-container {
+        display: flex;
+        align-items: center;
+        height: auto;
+        gap: 5px;
+        margin-right: 10px;
+    }
+
+    .github-project-icon {
+        width: 20px;
+        height: auto;
+    }
+
+    .headers {
+        margin: 8px;
+    }
+
+    .long-text {
+        margin: 8px;
+    }
+
+    #about-links {
+        margin-right: 8px;
+    }
+
+    .header-icons img {
+        width: 30px;
+        height: auto;
+        margin-left: 5px;
+        margin-right: 5px;
     }
     
-    #text-container-3 h2 {
-        margin-top: 25px;
+    .project {
+        margin-bottom: 25px;
+        margin-left: 30px;
+        margin-right: 30px;
+        width: 300px;
+        height: 500px;
+    }
+
+    .project-headers {
+        white-space: nowrap;
+        margin-left: 8px;
+        font-size: 1em;
+    }
+
+    .project-text {
+        margin: 8px;
+    }
+
+    main {
+        margin-bottom: 50px;
+    }
+
+    #main-header {
+        align-self: center;
+        height: auto;
+    }
+    
+    #footer-container {
+        width: 100%;
+    }
+
+    #footer-container h2 {
+        align-self: center;
     }
 
     .footer-text {
         margin-top: 15px;
-        width: 55%;
+        width: 60%;
+        align-self: center;
     }
 
     .material-symbols-outlined {
@@ -123,35 +271,118 @@
         margin-bottom: 5px;
     }
 
-    .section-3-icons img {
-        margin-top: 20px;
+    #footer-icon-container {
+        justify-content: center;
+    }
+
+    .footer-icons {
+        display: flex;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .footer-icons img {
+        width: 35px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 15px;
+    }
+
+    #footer-picture {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*PHONE MEDIUM*/
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    header {
+        margin-bottom: 75px;
+        margin-top: 25px;
+    }
+
+    #about-image-container {
+        width: 285px;
+    }
+
+    #about-container {
+        width: 350px;
+        height: 265px;
+    }
+
+    .project-icon-container {
+        display: flex;
+        align-items: center;
+        height: auto;
+        gap: 5px;
+        margin-right: 10px;
+    }
+
+    .github-project-icon {
+        width: 25px;
+        height: auto;
+    }
+
+    .headers {
+        margin: 10px
+    }
+
+    .long-text {
+        margin: 10px;
+    }
+
+    #about-links {
+        margin: 10px;
+    }
+
+    .header-icons img {
+        width: 35px;
+        height: auto;
         margin-left: 5px;
         margin-right: 5px;
     }
-  }
-  
-  @media screen and (min-width: 1024px) {
+
     
-    #text-container {
-        margin-top: 20px;
-        margin-bottom: 5px;
-    }
-    
-    .boxes {
+    .project {
         margin-bottom: 35px;
         margin-left: 45px;
         margin-right: 45px;
         width: 350px;
-        height: 400px;
+        height: 425px;
+    }
+
+    .project-headers {
+        white-space: nowrap;
+        margin-left: 10px;
+        font-size: 1.2em;
+    }
+
+    .project-text {
+        margin: 10px;
+    }
+
+    main {
+        margin-bottom: 75px;
+        display: flex;
+    }
+
+    #main-header {
+        align-self: center;
+        height: auto;
     }
     
-    #text-container-3 h2 {
-        margin-top: 25px;
+    #footer-container {
+        width: 100%;
+    }
+
+    #footer-container h2 {
+        align-self: center;
     }
 
     .footer-text {
         margin-top: 15px;
         width: 55%;
+        align-self: center;
     }
 
     .material-symbols-outlined {
@@ -159,10 +390,259 @@
         margin-bottom: 5px;
     }
 
-    .section-3-icons img {
-        margin-top: 20px;
+    #footer-icon-container {
+        justify-content: center;
+    }
+
+    .footer-icons {
+        display: flex;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .footer-icons img {
+        width: 35px;
         margin-left: 5px;
         margin-right: 5px;
+        margin-bottom: 15px;
+    }
+
+    #footer-picture {
+        width: 100%;
+        height: auto;
+    }
+  }
+  
+/*TABLET*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    header {
+        margin-bottom: 55px;
+        margin-top: 25px;
+    }
+
+    #about-image-container {
+        width: 270px;
+    }
+
+    #about-container {
+        width: 430px;
+        height: 250px;
+    }
+
+    .project-icon-container {
+        display: flex;
+        align-items: center;
+        height: auto;
+        gap: 5px;
+        margin-right: 10px;
+    }
+
+    .github-project-icon {
+        width: 25px;
+        height: auto;
+    }
+
+    .headers {
+        margin: 10px
+    }
+
+    .long-text {
+        margin: 10px;
+    }
+
+    #about-links {
+        margin: 10px;
+    }
+
+    .header-icons img {
+        width: 35px;
+        height: auto;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .project {
+        margin-bottom: 35px;
+        margin-left: 45px;
+        margin-right: 45px;
+        width: 350px;
+        height: 425px;
+    }
+
+    .project-headers {
+        white-space: nowrap;
+        margin-left: 10px;
+        font-size: 1.2em;
+    }
+
+    .project-text {
+        margin: 10px;
+    }
+
+    main {
+        margin-bottom: 55px;
+    }
+
+    #main-header {
+        margin-left: 200px;
+        width: 200px;
+    }
+
+    #footer-container {
+        width: 50%;
+        height: auto;
+    }
+    
+    #footer-container h2 {
+        width: 250px;
+        margin-top: 25px;
+        margin-left: 55px;
+    }
+
+    .footer-text {
+        margin-top: 15px;
+        margin-left: 55px;
+        width: 250px;
+    }
+
+    .material-symbols-outlined {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: 5px ;
+    }
+    
+    #footer-icon-container {
+        width: 350px;;
+    }
+
+    .footer-icons {
+        height: auto;
+        width: 35px;
+        margin-right: 15px;
+        margin-left: 55px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .footer-icons img {
+        width: 35px;
+        height: auto;
+    }
+
+    #footer-picture {
+        width: 250px;
+        height: auto;
+        margin: 20px;
+    }
+  }
+
+/*DESKTOP*/
+@media screen and (min-width: 1024px) {
+    header {
+        margin-bottom: 55px;
+        margin-top: 50px;
+    }
+
+    #about-image-container {
+        width: 300px;
+    }
+
+    #about-container {
+        width: 400px;
+        height: 250px;
+    }
+
+    .project-icon-container {
+        display: flex;
+        align-items: center;
+        height: auto;
+        gap: 5px;
+        margin-right: 10px;
+    }
+
+    .github-project-icon {
+        width: 30px;
+        height: auto;
+    }
+
+    .headers {
+        margin: 10px
+    }
+
+    .long-text {
+        margin: 10px;
+    }
+
+    #about-links {
+        margin: 10px;
+    }
+
+    .header-icons img {
+        width: 35px;
+        height: auto;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    
+    .project {
+        margin-bottom: 35px;
+        margin-left: 45px;
+        margin-right: 45px;
+        width: 350px;
+        height: 425px;
+    }
+
+    .project-headers {
+        white-space: nowrap;
+        margin-left: 10px;
+        font-size: 1.2em;
+    }
+
+    .project-text {
+        margin: 10px;
+    }
+
+    main {
+        margin-bottom: 55px;
+    }
+
+    #main-header {
+        margin-left: 140px;
+        width: 200px;
+    }
+    
+    #footer-container {
+        width: 450px;
+    }
+
+    .footer-text {
+        margin-top: 15px;
+        margin-left: 10px;
+        width: 55%;
+    }
+
+    .material-symbols-outlined {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: 5px ;
+    }
+
+    .footer-icons {
+        height: auto;
+        width: 35px;
+        margin-right: 15px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    .footer-icons img {
+        width: 35px;
+    }
+
+    #footer-picture {
+        width: 250px;
+        height: auto;
+        margin: 20px;
     }
   }
   
